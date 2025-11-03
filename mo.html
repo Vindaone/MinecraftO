@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Minecraft Optimized</title>
+<style>
+@font-face {
+  font-family: 'MinecraftTen';
+  src: url('MTen.ttf') format('truetype');
+}
+
+/* GLOBAL BODY */
+body {
+  margin: 0;
+  padding: 0;
+  background: url('bg.png') center/cover no-repeat fixed;
+  font-family: 'MinecraftTen', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: center;
+  overflow-x: hidden;
+  color: white;
+}
+
+/* TOP HEADER */
+.topBox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #ffffff;
+  color: black;
+  font-size: clamp(20px, 6vw, 48px);
+  padding: 3vw 0;
+  z-index: 999;
+  text-transform: uppercase;
+  border-bottom: 0.6vw solid #bdbdbd;
+  box-shadow: 0 0.6vw 1.2vw rgba(0,0,0,0.15);
+}
+
+/* WRAPPER */
+.wrapper {
+  margin-top: 35vw;
+  width: 100%;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 5vw;
+}
+
+/* TITLE IMAGE */
+.logo {
+  width: 85vw;
+  max-width: 600px;
+  image-rendering: pixelated;
+  display: block;
+  margin: 0 auto;
+}
+
+/* INFO BOX */
+.infoBox {
+  width: 100%;
+  background: rgba(0,0,0,0.6);
+  padding: 5vw;
+  font-size: clamp(14px, 4.5vw, 22px);
+  color: #ffffff;
+  border-radius: 2vw;
+  line-height: 1.8;
+  text-align: center;
+  margin-top: 8vw;
+  box-shadow: 0 0.8vw 2vw rgba(0,0,0,0.25);
+  white-space: pre-line; /* keeps line breaks */
+}
+
+/* NOTE TEXT */
+.note {
+  color: #b22222; /* dark red */
+  font-weight: bold;
+  margin-top: 2vw;
+}
+
+/* MINECRAFT STYLE DOWNLOAD BUTTON */
+.downloadBtn {
+  background: linear-gradient(#0B861B 85%, #0D5817 15%);
+  color: white;
+  font-family: 'MinecraftTen', sans-serif;
+  font-size: clamp(16px, 4vw, 22px);
+  text-shadow: 1px 1px 0 #000;
+  padding: 14px 60px;
+  border: none;
+  border-radius: 4px;
+  display: inline-block;
+  cursor: pointer;
+  text-decoration: none;
+  margin: 10vw auto 20vw auto;
+  box-shadow: 0 0px #0D5817;
+  transition: all 0.1s ease;
+}
+
+.downloadBtn:hover {
+  background: linear-gradient(#0B861B 85%, #0D5817 15%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px #0D5817;
+}
+
+.downloadBtn:active {
+  background: linear-gradient(#0B861B 85%, #0D5817 15%);
+  transform: translateY(2px);
+  box-shadow: 0 2px #1f661f;
+}
+</style>
+</head>
+<body>
+  <div class="topBox">Minecraft Optimized</div>
+
+  <div class="wrapper">
+    <img src="title.png" alt="Minecraft Optimized Title" class="logo">
+    <div class="infoBox">
+Minecraft Optimized is a hardcoded build where all core files including shaders, materials, and configurations are pre-optimized for maximum performance and stability.
+
+Performance improvements include:
+• Faster world loading
+• Reduced UI latency
+• Minimized render lag
+• No frame drops when exploring new chunks
+• Lower server-side latency
+• Improved handling of large numbers of entities
+• Shorter startup and initialization times
+
+This build is designed to remove common performance issues and deliver a smoother, more consistent gameplay experience across all supported devices.
+
+<span class="note">Note: This version is specifically configured for low-end devices by default and may not perform optimally on high-end systems.</span>
+    </div>
+
+    <!-- FIXED BUTTON — LEADS TO EXTERNAL LINK -->
+    <a href="" target="_blank" class="downloadBtn">DOWNLOAD</a>
+  </div>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Loading</title>
+<style>
+  body {
+    margin: 0;
+    background: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+
+  .loader {
+    display: grid;
+    grid-template-columns: repeat(3, 16px);
+    grid-template-rows: repeat(3, 16px);
+    gap: 2px;
+  }
+
+  .block {
+    width: 16px;
+    height: 16px;
+    background: #000;
+  }
+
+  .active {
+    background: #fff;
+  }
+
+  /* Animation frames */
+  @keyframes pixelLoad {
+    0%, 20% {
+      background: #000;
+    }
+    25%, 40% {
+      background: #fff;
+    }
+    45%, 60% {
+      background: #000;
+    }
+    65%, 80% {
+      background: #fff;
+    }
+    85%, 100% {
+      background: #000;
+    }
+  }
+</style>
+</head>
+<body>
+  <div class="loader">
+    <div class="block" id="b1"></div>
+    <div class="block" id="b2"></div>
+    <div class="block" id="b3"></div>
+    <div class="block" id="b4"></div>
+    <div class="block" id="b5"></div>
+    <div class="block" id="b6"></div>
+    <div class="block" id="b7"></div>
+    <div class="block" id="b8"></div>
+    <div class="block" id="b9"></div>
+  </div>
+
+  <script>
+    const pattern = [
+      [0,1,0,
+       1,1,0,
+       1,0,0],
+      [0,1,0,
+       0,1,1,
+       0,0,1],
+      [1,1,0,
+       0,1,0,
+       0,0,0]
+    ];
+    let step = 0;
+    const blocks = Array.from(document.querySelectorAll('.block'));
+
+    function showFrame() {
+      blocks.forEach((b, i) => {
+        b.classList.toggle('active', pattern[step][i]);
+      });
+      step = (step + 1) % pattern.length;
+    }
+
+    setInterval(showFrame, 400); // change every 0.4 sec
+    setTimeout(() => { window.location.href = "mo.html"; }, 6000);
+  </script>
+</body>
+</html>
